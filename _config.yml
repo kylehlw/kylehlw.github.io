@@ -27,7 +27,7 @@ highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "t
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kylehlw.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: Kyle Notes
-#github_username:  kylehlw
+github_username:  kylehlw
 
 ## => Author and Social
 ##############################
@@ -51,8 +51,8 @@ author:
   npm       : # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
 
 # Build settings
-#theme: minima
-theme: jekyll-text-theme # Gem-based Jekyll Themes
+theme: minima
+#theme: jekyll-text-theme # Gem-based Jekyll Themes
 
 plugins:
   - jekyll-feed
@@ -85,8 +85,6 @@ permalink   : date
 exclude:
   - .sass-cache/
   - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
   - Gemfile.lock
   - node_modules/
   - vendor/bundle/
