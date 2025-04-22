@@ -21,18 +21,58 @@
 title: Kyle's Notes
 email: kylehlw at gmail.com
 description: A blog about Kyle TS notes things.
+text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
+highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kylehlw.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: Kyle Notes
-github_username:  kylehlw
+#github_username:  kylehlw
+
+## => Author and Social
+##############################
+author:
+  type      : # "person" (default), "organization"
+  name      : Your Name
+  url       :
+  avatar    : # path or url of avatar image (square)
+  bio       : I am an amazing person.
+  email     :
+  facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
+  twitter   : # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
+  weibo     : # "user_id"   the last part of your profile url, e.g. https://www.weibo.com/user_id/profile?...
+  googleplus: # "user_id"   the last part of your profile url, e.g. https://plus.google.com/u/0/user_id
+  telegram  : # "user_name" the last part of your profile url, e.g. https://t.me/user_name
+  medium    : # "user_name" the last part of your profile url, e.g. https://medium.com/user_name
+  zhihu     : # "user_name" the last part of your profile url, e.g. https://www.zhihu.com/people/user_name
+  douban    : # "user_name" the last part of your profile url, e.g. https://www.douban.com/people/user_name
+  linkedin  : # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
+  github    : kylehlw # "user_name" the last part of your profile url, e.g. https://github.com/user_name
+  npm       : # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
 
 # Build settings
-theme: minima
-#remote_theme: pages-themes/architect@v0.2.0
+#theme: minima
+theme: jekyll-text-theme # Gem-based Jekyll Themes
+
 plugins:
   - jekyll-feed
-  #- jekyll-remote-theme 
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jemoji
 
+markdown    : kramdown
+highlighter : rouge
+permalink   : date
+
+## => Analytics
+##############################
+#analytics:
+#  provider: false # false (default), "google", "custom"
+#
+#  ## Google Analytics
+#  google:
+#    tracking_id : # Google Analytics id for the site
+#    anonymize_ip: false # Anonymize IP tracking for Analytics
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -42,20 +82,29 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE
 
 defaults:
   - scope:
       path: "assets/img"
     values:
       image: true
+      layout: article
+      sharing: true
+      license: true
+      aside:
+        toc: true
+      show_edit_on_github: true
+      show_subscribe: true
+      pageview: true
