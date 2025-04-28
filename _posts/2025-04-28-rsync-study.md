@@ -1,4 +1,12 @@
-# Rsync Usage Summary
+---
+layout: post
+title: "Rsync Usage Summary"
+date: 2025-04-18
+categories: Rsync Study
+
+---
+
+
 
 ## Introduction
 
