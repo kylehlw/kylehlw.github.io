@@ -38,7 +38,7 @@ Using a rsync daemon on one end removes the crypto overhead, and achieves 3.7 - 
 3. Click **Install** to open the **Install Rsync Daemon** configuration screen.
 4. Accept the default value or enter a name in  **Application Name**.
 5. Accept the **Network Configuration** default port number (30026) the Rsync app listens on.
-6. Add and configure at least one module. A module creates an alias for a connection (path) to use rsync with. Click **Add** to display the **Module Configuration** fields. Enter a name and specify the path to the dataset this module uses for the rsync server storage. Leave **Enable Module** selected. Select the type of access from the **Access Mode** dropdown list. Accept the rest of the module setting defaults. To limit clients that connect, enter IP addresses in **Hosts Allow** and  **Hosts Deny** .
+6. Add and configure at least one module. A module creates an alias for a connection (path) to use rsync with. Click **Add** to display the **Module Configuration** fields. Enter a name and specify the path to the dataset this module uses for the rsync server storage. Leave **Enable Module** selected. Select the type of access from the **Access Mode** dropdown list. Accept the rest of the module setting defaults. To limit clients that connect, enter IP addresses in **Hosts Allow** and  **Hosts Deny** . ![2025-04-29_11-59.png](/assets/img/2025-04-29_11-59.png)
 7. Accept the default for the rest of the settings.
 8. Accept the default values in **Resources Configuration** or enter the CPU and memory values for the destination system.
 9. Click  **Save** . ![RsyncDAppInstalled.png](/assets/img/RsyncDAppInstalled.png)
@@ -51,7 +51,7 @@ To test your connection to the rsync daemon and find which paths are available t
 rsync -rdt rsync://IPADDR:RsyncPort/
 
 $ rsync -rdt rsync://10.1.1.130:30026   
-logs     
+logs   
 ```
 
 And once you find the file, you can complete the command and pull it in.
@@ -59,7 +59,6 @@ And once you find the file, you can complete the command and pull it in.
 ```
 rsync -rdt rsync://IPADDR:RsyncPort/DirectoryName/File /DestinationDirectory/
 ```
-
 
 ## References
 
