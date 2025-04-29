@@ -4,16 +4,15 @@ title: "QNAP TS-870 Pro Testing in offie network"
 date: 2025-03-25
 categories: IO testing summary
 ---
-
 # Test Overview
 
 ## Test object
 
-QNAP TS-870 Pro 
+QNAP TS-870 Pro
+
 ## Test time
 
 March 25, 2025
-
 
 ## Test environment
 
@@ -65,7 +64,7 @@ randrw_70read_4k: (groupid=0, jobs=10): err= 0: pid=701694: Tue Mar 25 16:47:18 
      issued rwts: total=12239,5386,0,0 short=0,0,0,0 dropped=0,0,0,0 
      latency   : target=0, window=0, percentile=100.00%, depth=1 
 Run status group 0 (all jobs): 
-   READ: bw=408KiB/s (418kB/s), 408KiB/s-408KiB/s (418kB/s-418kB/s), io=47.8MiB (50.1MB), run=120054-120054msec                                
+   READ: bw=408KiB/s (418kB/s), 408KiB/s-408KiB/s (418kB/s-418kB/s), io=47.8MiB (50.1MB), run=120054-120054msec                              
   WRITE: bw=179KiB/s (184kB/s), 179KiB/s-179KiB/s (184kB/s-184kB/s), io=21.0MiB (22.1MB), run=120054-120054msec  
 ```
 
@@ -108,7 +107,7 @@ randrw_70read_4k: (groupid=0, jobs=10): err= 0: pid=486439: Tue Mar 25 08:53:57 
      latency   : target=0, window=0, percentile=100.00%, depth=1 
 Run status group 0 (all jobs):
    READ: bw=419KiB/s (429kB/s), 419KiB/s-419KiB/s (429kB/s-429kB/s), io=49.1MiB (51.5MB), run=120062-120062msec 
-  WRITE: bw=184KiB/s (188kB/s), 184KiB/s-184KiB/s (188kB/s-188kB/s), io=21.6MiB (22.6MB), run=120062-120062msec          
+  WRITE: bw=184KiB/s (188kB/s), 184KiB/s-184KiB/s (188kB/s-188kB/s), io=21.6MiB (22.6MB), run=120062-120062msec        
 ```
 
 ### QNAP NAS localhost:
@@ -118,46 +117,46 @@ fio-2.2.10
 Starting 10 threads 
 randrw_70read_4k: Laying out IO file(s) (1 file(s) / 20480MB) 
 Jobs: 1 (f=1): [E(2),_(1),E(1),_(1),m(1),E(1),_(3)] [16.8% done] [563KB/291KB/0KB /s] [140/72/0 iops] [eta 09m:59s]
-randrw_70read_4k: (groupid=0, jobs=10): err= 0: pid=10041: Tue Mar 25 17:03:14 2025                                
+randrw_70read_4k: (groupid=0, jobs=10): err= 0: pid=10041: Tue Mar 25 17:03:14 2025                              
   read : io=79304KB, bw=676445B/s, iops=165, runt=120050msec  
-    clat (usec): min=99, max=354725, avg=41139.00, stdev=29226.99                                                  
-     lat (usec): min=99, max=354725, avg=41139.32, stdev=29226.99                                                  
-    clat percentiles (msec):                                  
-     |  1.00th=[    3],  5.00th=[    5], 10.00th=[    8], 20.00th=[   12],                                         
-     | 30.00th=[   21], 40.00th=[   31], 50.00th=[   39], 60.00th=[   47],                                         
-     | 70.00th=[   56], 80.00th=[   65], 90.00th=[   79], 95.00th=[   91],                                         
-     | 99.00th=[  127], 99.50th=[  151], 99.90th=[  196], 99.95th=[  217],                                         
-     | 99.99th=[  355]                                        
-    bw (KB  /s): min=    7, max=  147, per=9.98%, avg=65.88, stdev=21.41                                           
+    clat (usec): min=99, max=354725, avg=41139.00, stdev=29226.99                                                
+     lat (usec): min=99, max=354725, avg=41139.32, stdev=29226.99                                                
+    clat percentiles (msec):                                
+     |  1.00th=[    3],  5.00th=[    5], 10.00th=[    8], 20.00th=[   12],                                       
+     | 30.00th=[   21], 40.00th=[   31], 50.00th=[   39], 60.00th=[   47],                                       
+     | 70.00th=[   56], 80.00th=[   65], 90.00th=[   79], 95.00th=[   91],                                       
+     | 99.00th=[  127], 99.50th=[  151], 99.90th=[  196], 99.95th=[  217],                                       
+     | 99.99th=[  355]                                      
+    bw (KB  /s): min=    7, max=  147, per=9.98%, avg=65.88, stdev=21.41                                         
   write: io=31956KB, bw=272577B/s, iops=66, runt=120050msec   
-    clat (usec): min=172, max=350259, avg=48136.30, stdev=30764.81                                                 
-     lat (usec): min=173, max=350259, avg=48136.78, stdev=30764.81                                                 
-    clat percentiles (msec):                                  
-     |  1.00th=[    6],  5.00th=[    9], 10.00th=[   12], 20.00th=[   18],                                         
-     | 30.00th=[   30], 40.00th=[   38], 50.00th=[   46], 60.00th=[   55],                                         
-     | 70.00th=[   63], 80.00th=[   72], 90.00th=[   86], 95.00th=[   99],                                         
-     | 99.00th=[  137], 99.50th=[  165], 99.90th=[  212], 99.95th=[  338],                                         
-     | 99.99th=[  351]                                        
-    bw (KB  /s): min=    5, max=   79, per=9.96%, avg=26.49, stdev=11.36                                           
+    clat (usec): min=172, max=350259, avg=48136.30, stdev=30764.81                                               
+     lat (usec): min=173, max=350259, avg=48136.78, stdev=30764.81                                               
+    clat percentiles (msec):                                
+     |  1.00th=[    6],  5.00th=[    9], 10.00th=[   12], 20.00th=[   18],                                       
+     | 30.00th=[   30], 40.00th=[   38], 50.00th=[   46], 60.00th=[   55],                                       
+     | 70.00th=[   63], 80.00th=[   72], 90.00th=[   86], 95.00th=[   99],                                       
+     | 99.00th=[  137], 99.50th=[  165], 99.90th=[  212], 99.95th=[  338],                                       
+     | 99.99th=[  351]                                      
+    bw (KB  /s): min=    5, max=   79, per=9.96%, avg=26.49, stdev=11.36                                         
     lat (usec) : 100=0.01%, 250=0.17%, 500=0.01%, 750=0.01%   
-    lat (msec) : 2=0.34%, 4=2.48%, 10=10.39%, 20=13.80%, 50=34.61%                                                 
-    lat (msec) : 100=34.79%, 250=3.37%, 500=0.03%             
-  cpu          : usr=0.02%, sys=0.13%, ctx=53383, majf=3, minf=6                                                   
-  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%                                     
-     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%                                    
-     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%                                    
-     issued    : total=r=19826/w=7989/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0                                     
-     latency   : target=0, window=0, percentile=100.00%, depth=1                                                   
-           
-Run status group 0 (all jobs):                                
-   READ: io=79304KB, aggrb=660KB/s, minb=660KB/s, maxb=660KB/s, mint=120050msec, maxt=120050msec                   
-  WRITE: io=31956KB, aggrb=266KB/s, minb=266KB/s, maxb=266KB/s, mint=120050msec, maxt=120050msec                   
-           
-Disk stats (read/write):                                      
-    dm-0: ios=20097/8571, merge=0/0, ticks=217064/168510, in_queue=385586, util=99.84%, aggrios=20097/8594, aggrmerge=0/0, aggrticks=217046/168508, aggrin_queue=385557, aggrutil=99.82%                                 
-    dm-7: ios=20097/8594, merge=0/0, ticks=217046/168508, in_queue=385557, util=99.82%, aggrios=20097/8594, aggrmerge=0/0, aggrticks=216893/168332, aggrin_queue=385229, aggrutil=99.77%                                 
-    dm-5: ios=20097/8594, merge=0/0, ticks=216893/168332, in_queue=385229, util=99.77%, aggrios=5024/2160, aggrmerge=0/0, aggrticks=54217/42703, aggrin_queue=96922, aggrutil=99.76%                                     
-    dm-1: ios=1/0, merge=0/0, ticks=7/0, in_queue=7, util=0.01%, aggrios=0/0, aggrmerge=0/0, aggrticks=0/0, aggrin_queue=0, aggrutil=0.00%                                                                               
+    lat (msec) : 2=0.34%, 4=2.48%, 10=10.39%, 20=13.80%, 50=34.61%                                               
+    lat (msec) : 100=34.79%, 250=3.37%, 500=0.03%           
+  cpu          : usr=0.02%, sys=0.13%, ctx=53383, majf=3, minf=6                                                 
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%                                   
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%                                  
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%                                  
+     issued    : total=r=19826/w=7989/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0                                   
+     latency   : target=0, window=0, percentile=100.00%, depth=1                                                 
+         
+Run status group 0 (all jobs):                              
+   READ: io=79304KB, aggrb=660KB/s, minb=660KB/s, maxb=660KB/s, mint=120050msec, maxt=120050msec                 
+  WRITE: io=31956KB, aggrb=266KB/s, minb=266KB/s, maxb=266KB/s, mint=120050msec, maxt=120050msec                 
+         
+Disk stats (read/write):                                    
+    dm-0: ios=20097/8571, merge=0/0, ticks=217064/168510, in_queue=385586, util=99.84%, aggrios=20097/8594, aggrmerge=0/0, aggrticks=217046/168508, aggrin_queue=385557, aggrutil=99.82%                               
+    dm-7: ios=20097/8594, merge=0/0, ticks=217046/168508, in_queue=385557, util=99.82%, aggrios=20097/8594, aggrmerge=0/0, aggrticks=216893/168332, aggrin_queue=385229, aggrutil=99.77%                               
+    dm-5: ios=20097/8594, merge=0/0, ticks=216893/168332, in_queue=385229, util=99.77%, aggrios=5024/2160, aggrmerge=0/0, aggrticks=54217/42703, aggrin_queue=96922, aggrutil=99.76%                                   
+    dm-1: ios=1/0, merge=0/0, ticks=7/0, in_queue=7, util=0.01%, aggrios=0/0, aggrmerge=0/0, aggrticks=0/0, aggrin_queue=0, aggrutil=0.00%                                                                             
   drbd1: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%
     dm-2: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00% 
     dm-3: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00% 
@@ -167,7 +166,7 @@ Disk stats (read/write):
 
 # Basic performance summary
 
-If this NAS just use 1*1Gbps network interface, base on the testing result, it will full speed of 1Gbps network.  
+If this NAS just use 1*1Gbps network interface, base on the testing result, it will full speed of 1Gbps network.
 ![2025-03-25_15-54.png](/assets/img/2025-03-25_15-54.png)
 ![2025-03-25_15-53_1.png](/assets/img/2025-03-25_15-53_1.png)
 
@@ -181,4 +180,44 @@ For a single client, even with Port Trunking, the NAS's transmission speed will 
 
 ## Scale up network interface
 
-Add 2.5Gbps or 10Gbps port by USB / PCIe. We can select it from this page:  [兼容性列表 - QNAP](https://www.qnap.com.cn/zh-cn/compatibility/?model=108&category=11&filter%5Btype%5D=expansion_card) 
+Add 2.5Gbps or 10Gbps port by USB / PCIe. We can select it from this page:  [兼容性列表 - QNAP](https://www.qnap.com.cn/zh-cn/compatibility/?model=108&category=11&filter%5Btype%5D=expansion_card)
+
+
+# Others
+
+
+from https://www.cnblogs.com/raykuan/p/6914748.html
+
+测试场景：
+
+100%随机，100%读， 4K
+
+```
+fio -filename=/mnt/nfsmountpoint/sg-nas3-ventishare/testdir/testfile -direct=1 -iodepth 1 -thread -rw=randread -ioengine=psync -bs=4k -size=1000G -numjobs=50 -runtime=180 -group_reporting -name=rand_100read_4k
+```
+
+100%随机，100%写， 4K
+
+```
+fio -filename=/mnt/nfsmountpoint/sg-nas3-ventishare/testdir/testfile -direct=1 -iodepth 1 -thread -rw=randwrite -ioengine=psync -bs=4k -size=1000G -numjobs=50 -runtime=180 -group_reporting -name=rand_100write_4k
+```
+
+100%顺序，100%读 ，4K
+
+```
+fio -filename=/mnt/nfsmountpoint/sg-nas3-ventishare/testdir/testfile -direct=1 -iodepth 1 -thread -rw=read -ioengine=psync -bs=4k -size=1000G -numjobs=50 -runtime=180 -group_reporting -name=sqe_100read_4k
+```
+
+100%顺序，100%写 ，4K
+
+```
+fio -filename=/mnt/nfsmountpoint/sg-nas3-ventishare/testdir/testfile -direct=1 -iodepth 1 -thread -rw=write -ioengine=psync -bs=4k -size=1000G -numjobs=50 -runtime=180 -group_reporting -name=sqe_100write_4k
+```
+
+100%随机，70%读，30%写 4K
+
+```
+fio -filename=/mnt/nfsmountpoint/sg-nas3-ventishare/testdir/testfile -direct=1 -iodepth 1 -thread -rw=randrw -rwmixread=70 -ioengine=psync -bs=4k -size=200G -numjobs=10 -runtime=180 -group_reporting -name=randrw_70read_4k
+```
+
+[端口聚合 port trunking](https://www.qnap.com/zh-tw/how-to/tutorial/article/%E5%A6%82%E4%BD%95%E5%9C%A8-qnap-nas-%E4%B8%8A%E4%BD%BF%E7%94%A8-802-3ad-lacp%E4%BE%86%E8%A8%AD%E5%AE%9A-port-trunking%E7%AB%AF%E5%8F%A3%E8%81%9A%E5%90%88%E4%B8%A6%E6%8F%90%E9%AB%98%E7%B6%B2%E8%B7%AF%E9%A0%BB%E5%AF%AC)
