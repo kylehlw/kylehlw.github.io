@@ -22,13 +22,13 @@ These courses provide a good overview of the different services offered by Googl
 
 ### Analytics Query and Pipeline
 
-Exploring BigQuery to replace athena. [![](https://www.gstatic.com/cgc/favicon.ico)BigQuery | AI data platform | Lakehouse | EDW](https://cloud.google.com/bigquery/?utm_source=google&utm_medium=cpc&utm_campaign=japac-SG-all-en-dr-BKWS-all-all-trial-PHR-dr-1605216&utm_content=text-ad-none-none-DEV_c-CRE_649002494368-ADGP_Hybrid+%7C+BKWS+-+BRO+%7C+Txt+~+Data+Analytics_BigQuery_bigquery_main-KWID_43700075889240721-aud-2079991351570:kwd-33969409261&userloc_9062542-network_g&utm_term=KW_bigquery&gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_69n33vwzkHsXoHAASLBkDEjGAjUvnAEUzRHch4EcCRMiwjjhfhKFRxoCcDcQAvD_BwE&gclsrc=aw.ds&hl=en)
+Exploring BigQuery to replace athena. [![](https://www.gstatic.com/cgc/favicon.ico)BigQuery > AI data platform > Lakehouse > EDW](https://cloud.google.com/bigquery/?utm_source=google&utm_medium=cpc&utm_campaign=japac-SG-all-en-dr-BKWS-all-all-trial-PHR-dr-1605216&utm_content=text-ad-none-none-DEV_c-CRE_649002494368-ADGP_Hybrid+%7C+BKWS+-+BRO+%7C+Txt+~+Data+Analytics_BigQuery_bigquery_main-KWID_43700075889240721-aud-2079991351570:kwd-33969409261&userloc_9062542-network_g&utm_term=KW_bigquery&gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_69n33vwzkHsXoHAASLBkDEjGAjUvnAEUzRHch4EcCRMiwjjhfhKFRxoCcDcQAvD_BwE&gclsrc=aw.ds&hl=en)
 
 Analytics backend switched from S3 + athena to **GS** + big query.
 
-In house airflow → compose or data flow directly. [![](https://www.gstatic.com/devrel-devsite/prod/v0d244f667a3683225cca86d0ecf9b9b81b1e734e55a030bdcd3f3094b835c987/cloud/images/favicons/onecloud/favicon.ico)Cloud Composer | Google Cloud](https://cloud.google.com/composer?hl=en)
+In house airflow → compose or data flow directly. [![](https://www.gstatic.com/devrel-devsite/prod/v0d244f667a3683225cca86d0ecf9b9b81b1e734e55a030bdcd3f3094b835c987/cloud/images/favicons/onecloud/favicon.ico)Cloud Composer > Google Cloud](https://cloud.google.com/composer?hl=en)
 
-Looker → Data Visualization. [![](https://www.gstatic.com/cgc/favicon.ico)Looker Studio: Business Insights Visualizations | Google Cloud](https://cloud.google.com/looker-studio?utm_source=google&utm_medium=cpc&utm_campaign=japac-SG-all-en-dr-SKWS-all-all-trial-DSA-dr-1605216&utm_content=text-ad-none-none-DEV_c-CRE_647923039857-ADGP_Hybrid+%7C+SKWS+-+BRO+%7C+DSA+~+All+Webpages-KWID_39700075148142355-aud-1596662388934:dsa-19959388920&userloc_9062542-network_g&utm_term=KW_&gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_6xJG-coqqcP-UVJKsx3ao1t0g4Jmi-O0wuzHn5RGr0VHMBEICOERphoCht4QAvD_BwE&gclsrc=aw.ds&hl=en)
+Looker → Data Visualization. [![](https://www.gstatic.com/cgc/favicon.ico)Looker Studio: Business Insights Visualizations > Google Cloud](https://cloud.google.com/looker-studio?utm_source=google&utm_medium=cpc&utm_campaign=japac-SG-all-en-dr-SKWS-all-all-trial-DSA-dr-1605216&utm_content=text-ad-none-none-DEV_c-CRE_647923039857-ADGP_Hybrid+%7C+SKWS+-+BRO+%7C+DSA+~+All+Webpages-KWID_39700075148142355-aud-1596662388934:dsa-19959388920&userloc_9062542-network_g&utm_term=KW_&gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_6xJG-coqqcP-UVJKsx3ao1t0g4Jmi-O0wuzHn5RGr0VHMBEICOERphoCht4QAvD_BwE&gclsrc=aw.ds&hl=en)
 
 ### Cold Storage
 
@@ -36,7 +36,7 @@ Would it feasible to store some archive data in **GCS** archive storage? Any ser
 
 [![](https://www.gstatic.com/cgc/favicon.ico)Cloud Storage Options](https://cloud.google.com/products/storage/?utm_source=google&utm_medium=cpc&utm_campaign=japac-SG-all-en-dr-BKWS-all-all-trial-PHR-dr-1605216&utm_content=text-ad-none-none-DEV_c-CRE_648963674637-ADGP_Hybrid+%7C+BKWS+-+BRO+%7C+Txt+~+Storage_Cloud+Storage_gcp+storage_main-KWID_43700075875309325-aud-1596662388934:kwd-1731096149025&userloc_9062542-network_g&utm_term=KW_google+storage+cloud&gad_source=1&gclid=CjwKCAiAk9itBhASEiwA1my_67usCmqwxfqZ9UsWZaH9A2lWClBve-tPUakm47A8lctPw6FPdo1YahoCdqIQAvD_BwE&gclsrc=aw.ds&hl=en)
 
-[![](https://www.gstatic.com/devrel-devsite/prod/va15d3cf2bbb0f0b76bff872a3310df731db3118331ec014ebef7ea080350285b/cloud/images/favicons/onecloud/favicon.ico)Overview  |  Transfer Appliance  |  Google Cloud](https://cloud.google.com/transfer-appliance/docs/4.0/overview?_gl=1*d3uc1w*_up*MQ..&gclid=CjwKCAiAk9itBhASEiwA1my_610YT3vGXk5zdZIUwP0yNrGLR3Ay08Yjn6V5vb_9lqvnn6wbHxpCphoChIEQAvD_BwE&gclsrc=aw.ds)
+[![](https://www.gstatic.com/devrel-devsite/prod/va15d3cf2bbb0f0b76bff872a3310df731db3118331ec014ebef7ea080350285b/cloud/images/favicons/onecloud/favicon.ico)Overview > Transfer Appliance > Google Cloud](https://cloud.google.com/transfer-appliance/docs/4.0/overview?_gl=1*d3uc1w*_up*MQ..&gclid=CjwKCAiAk9itBhASEiwA1my_610YT3vGXk5zdZIUwP0yNrGLR3Ay08Yjn6V5vb_9lqvnn6wbHxpCphoChIEQAvD_BwE&gclsrc=aw.ds)
 
 ### CI/CD
 
@@ -54,7 +54,7 @@ Should we setup hybrid env cross office servers + cloud servers?
 
 ### ML Training in GCP
 
-[![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Introduction to Vertex AI  |  Google Cloud](https://cloud.google.com/ai-platform/docs/technical-overview)
+[![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Introduction to Vertex AI > Google Cloud](https://cloud.google.com/ai-platform/docs/technical-overview)
 
 ## Labs
 
@@ -65,7 +65,7 @@ The hands-on labs are a great way to get practical experience with Google Cloud.
 #### Install  corresponding tools
 
 * Terraform for infra management. [![](https://developer.hashicorp.com/favicon.ico)Terraform | HashiCorp Developer](https://www.terraform.io/)
-* GCP cli. [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)gcloud CLI overview  |  Google Cloud CLI Documentation](https://cloud.google.com/sdk/gcloud)  [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Install the gcloud CLI  |  Google Cloud CLI Documentation](https://cloud.google.com/sdk/docs/install)
+* GCP cli. [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)gcloud CLI overview > Google Cloud CLI Documentation](https://cloud.google.com/sdk/gcloud)  [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Install the gcloud CLI > Google Cloud CLI Documentation](https://cloud.google.com/sdk/docs/install)
 
 ##### CLI Basic Setup
 
@@ -130,7 +130,7 @@ Proposed IP Range for VPC and subnets
 | 10.202.0.0/16      | prod VPC Native**GKE**pods |
 | 10.203.0.0/16      | prod VPC NativeGKEservice        |
 
-Private google service access is enabled. [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Private Google Access  |  VPC  |  Google Cloud](https://cloud.google.com/vpc/docs/private-google-access)
+Private google service access is enabled. [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Private Google Access > VPC > Google Cloud](https://cloud.google.com/vpc/docs/private-google-access)
 
 Current setup in infra code:  develop/infra/terraform/gcp/cloud_infra/components/vpc
 
@@ -142,10 +142,10 @@ First Testing GKE cluster will be a vpc native cluster.
 
 ### Basic GCP/GKE Knowledge
 
-* Spot vs Premptive [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Preemptible VM instances  |  Compute Engine Documentation  |  Google Cloud](https://cloud.google.com/compute/docs/instances/preemptible)
-* VPC-Native Cluster [![](https://www.gstatic.com/devrel-devsite/prod/v18af98722840dca56faefae94257d94871f07ae68e6f6225c2963b4f21ad2128/cloud/images/favicons/onecloud/favicon.ico)VPC-native clusters  |  GKE networking  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/concepts/alias-ips)
+* Spot vs Premptive [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Preemptible VM instances > Compute Engine Documentation > Google Cloud](https://cloud.google.com/compute/docs/instances/preemptible)
+* VPC-Native Cluster [![](https://www.gstatic.com/devrel-devsite/prod/v18af98722840dca56faefae94257d94871f07ae68e6f6225c2963b4f21ad2128/cloud/images/favicons/onecloud/favicon.ico)VPC-native clusters > GKE networking > Google Cloud](https://cloud.google.com/kubernetes-engine/docs/concepts/alias-ips)
 * Node Taints [![](https://kubernetes.io/icons/favicon-16.png)Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
-* GKE Autoscaling [![](https://www.gstatic.com/devrel-devsite/prod/v18af98722840dca56faefae94257d94871f07ae68e6f6225c2963b4f21ad2128/cloud/images/favicons/onecloud/favicon.ico)Autoscaling a cluster  |  Google Kubernetes Engine (GKE)  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-autoscaler) [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Vertical Pod autoscaling  |  Google Kubernetes Engine (GKE)  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler) [![](https://www.gstatic.com/devrel-devsite/prod/va15d3cf2bbb0f0b76bff872a3310df731db3118331ec014ebef7ea080350285b/cloud/images/favicons/onecloud/favicon.ico)Horizontal Pod autoscaling  |  Google Kubernetes Engine (GKE)  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/concepts/horizontalpodautoscaler)
+* GKE Autoscaling [![](https://www.gstatic.com/devrel-devsite/prod/v18af98722840dca56faefae94257d94871f07ae68e6f6225c2963b4f21ad2128/cloud/images/favicons/onecloud/favicon.ico)Autoscaling a cluster > Google Kubernetes Engine (GKE) > Google Cloud](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-autoscaler) [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Vertical Pod autoscaling > Google Kubernetes Engine (GKE) > Google Cloud](https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler) [![](https://www.gstatic.com/devrel-devsite/prod/va15d3cf2bbb0f0b76bff872a3310df731db3118331ec014ebef7ea080350285b/cloud/images/favicons/onecloud/favicon.ico)Horizontal Pod autoscaling > Google Kubernetes Engine (GKE) > Google Cloud](https://cloud.google.com/kubernetes-engine/docs/concepts/horizontalpodautoscaler)
 
 ### Create GKE with Terraform
 
@@ -178,7 +178,7 @@ Google deprecated **GCR** and moved to GAR (google artifacts registry)
 
 Setup GAR to push images that can be used in GKE cluster.
 
-[![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Artifact Registry documentation  |  Google Cloud](https://cloud.google.com/artifact-registry)
+[![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Artifact Registry documentation > Google Cloud](https://cloud.google.com/artifact-registry)
 
 ### Setup local credential config
 
@@ -259,7 +259,7 @@ develop/infra/terraform/gcp/cloud_infra/components/gke/gke.tf#L101
 
 This page shows you how to perform basic tasks in Cloud Storage using the gcloud command-line tool.
 
- [![](https://www.gstatic.com/devrel-devsite/prod/v18af98722840dca56faefae94257d94871f07ae68e6f6225c2963b4f21ad2128/cloud/images/favicons/onecloud/favicon.ico)Quickstart: Discover object storage with the gcloud tool  |  Cloud Storage  |  Google Cloud](https://cloud.google.com/storage/docs/discover-object-storage-gcloud)
+ [![](https://www.gstatic.com/devrel-devsite/prod/v18af98722840dca56faefae94257d94871f07ae68e6f6225c2963b4f21ad2128/cloud/images/favicons/onecloud/favicon.ico)Quickstart: Discover object storage with the gcloud tool > Cloud Storage > Google Cloud](https://cloud.google.com/storage/docs/discover-object-storage-gcloud)
 
 ## get GCS bucket
 
@@ -280,8 +280,8 @@ gs://xxxxgcp-dbbackup/
 
 ## Future Work
 
-* Pair with office network. [![](https://www.gstatic.com/devrel-devsite/prod/va15d3cf2bbb0f0b76bff872a3310df731db3118331ec014ebef7ea080350285b/cloud/images/favicons/onecloud/favicon.ico)Best practices for Cloud VPN  |  Google Cloud](https://cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices) [![](https://www.gstatic.com/devrel-devsite/prod/va15d3cf2bbb0f0b76bff872a3310df731db3118331ec014ebef7ea080350285b/cloud/images/favicons/onecloud/favicon.ico)Prepare for Hybrid Subnets connectivity  |  VPC  |  Google Cloud](https://cloud.google.com/vpc/docs/prepare-for-hybrid-subnet-connectivity)
-* Investigate different auto scaling setups for k8s. [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)About GKE cluster autoscaling  |  Google Kubernetes Engine (GKE)  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler)
+* Pair with office network. [![](https://www.gstatic.com/devrel-devsite/prod/va15d3cf2bbb0f0b76bff872a3310df731db3118331ec014ebef7ea080350285b/cloud/images/favicons/onecloud/favicon.ico)Best practices for Cloud VPN > Google Cloud](https://cloud.google.com/network-connectivity/docs/vpn/concepts/best-practices) [![](https://www.gstatic.com/devrel-devsite/prod/va15d3cf2bbb0f0b76bff872a3310df731db3118331ec014ebef7ea080350285b/cloud/images/favicons/onecloud/favicon.ico)Prepare for Hybrid Subnets connectivity > VPC > Google Cloud](https://cloud.google.com/vpc/docs/prepare-for-hybrid-subnet-connectivity)
+* Investigate different auto scaling setups for k8s. [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)About GKE cluster autoscaling > Google Kubernetes Engine (GKE) > Google Cloud](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler)
 
 ## Certifications
 
