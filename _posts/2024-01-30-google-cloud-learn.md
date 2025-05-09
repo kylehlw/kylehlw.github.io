@@ -64,7 +64,7 @@ The hands-on labs are a great way to get practical experience with Google Cloud.
 
 #### Install  corresponding tools
 
-* Terraform for infra management. [![](https://developer.hashicorp.com/favicon.ico)Terraform | HashiCorp Developer](https://www.terraform.io/)
+* Terraform for infra management. [![](https://developer.hashicorp.com/favicon.ico)Terraform > HashiCorp Developer](https://www.terraform.io/)
 * GCP cli. [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)gcloud CLI overview > Google Cloud CLI Documentation](https://cloud.google.com/sdk/gcloud)  [![](https://www.gstatic.com/devrel-devsite/prod/v8d1d0686aef3ca9671e026a6ce14af5c61b805aabef7c385b0e34494acbfc654/cloud/images/favicons/onecloud/favicon.ico)Install the gcloud CLI > Google Cloud CLI Documentation](https://cloud.google.com/sdk/docs/install)
 
 ##### CLI Basic Setup
