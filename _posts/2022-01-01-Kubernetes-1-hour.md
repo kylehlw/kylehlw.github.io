@@ -190,4 +190,4 @@ Kubernetes 是一个强大的容器编排平台，通过本文的介绍，您应
 - [Kubernetes 官方文档](https://kubernetes.io/docs/home/)
 - [Kubernetes 中文社区](https://www.kubernetes.org.cn/)
 - [Kubernetes 最佳实践](https://kubernetes.io/docs/concepts/configuration/overview/)
-- [ubernetes一小时轻松入门](htps://www.youtube.com/watch?v=SL83f7Nzxr0&t=1272s)
+- [Kubernetes一小时轻松入门](htps://www.youtube.com/watch?v=SL83f7Nzxr0&t=1272s)
