@@ -376,7 +376,7 @@ add_header Permissions-Policy "geolocation=(), microphone=(), camera=()";
 - [Mozilla Observatory](https://observatory.mozilla.org)
 - [SSL Labs](https://www.ssllabs.com/ssltest/)
 - [Application Security - HTTP Headers](https://www.sentrium.co.uk/labs/application-security-101-http-headers)
-- [HTTP headers - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+- [HTTP headers - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
 
 ## 总结
 
