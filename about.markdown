@@ -35,6 +35,12 @@ permalink: /about/
 
 感谢你访问我的博客！希望这里的内容能对你有所帮助。我会持续更新有关 Linux、系统管理、编程等方面的文章，欢迎经常来访。
 
+# 我的邀请连接
+
+由于某些大家都懂的原因，可以用下面任意连接尝试"**科学online**"
+
+[地址1](https://justmysocks5.net/members/aff.php?aff=19224)  [地址2](https://justmysocks2.net/members/aff.php?aff=19224)  [地址3](https://justmysocks6.net/members/aff.php?aff=19224)  [地址4](https://justmysocks.cn/members/aff.php?aff=19224)  [地址5](https://justmysocks.net/members/aff.php?aff=19224)
+
 ---
 
 *本站使用 Jekyll 构建，采用 Minima 主题定制。*
