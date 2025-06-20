@@ -176,6 +176,8 @@ sudo systemctl restart docker
 - [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 - [NVIDIA容器工具包文档](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/overview.html)
 - [NVIDIA CUDA文档](https://docs.nvidia.com/cuda/)
+- Docker Xmind ![Docker Xmind](../assets/img/DockerXMind.png)[[点击下载 Docker Xmind PDF](../assets/pdf/DockerXMind.pdf)]
+
 
 ---
 
