@@ -1,19 +1,26 @@
-Production Level **IoT** Fundations
 
-Features.
+---
+layout: post
+title: "TLS Support in RabbitMQ and MQTT"
+date: 2025-09-26 10:00:00 +0800
+categories: 
+---
+# Production-Level **IoT** Foundations
 
-1. Cluster, reliability with failure over.
-2. Load testing support large scale.
+Features
+
+1. Clustering, reliability with failover.
+2. Load testing supporting large scale.
 3. Data Encryption.
 4. Proper client authentication.
 
-In order to support above features to fully enable production level IoT Services (foundation of FMS), investigation of TLS/**SSL** support in RabbitMQ is needed.
+In order to support the above features and fully enable production-level IoT services (foundation of FMS), investigation of TLS/**SSL** support in RabbitMQ is needed.
 
 # TLS Basics
 
 [**TLS Support - RabbitMQ**](https://www.rabbitmq.com/docs/ssl#certificates-and-keys)
 
-Some basic notes.
+Some basic notes:
 
 [Transport Layer Security](https://www.google.com/search?sca_esv=148cca40eee112c3&sxsrf=AE3TifN4-a-7LiZPllth-HWd9LYYfG7m6Q%3A1758851684901&q=Transport+Layer+Security&sa=X&ved=2ahUKEwi_q5CPqfWPAxU44zgGHQBzErcQxccNegQIMxAB&mstk=AUtExfBUzmPgVKLryFs1Y6VYrM1PSr7Kdz0EdjCdlZ0jhgNbGOqUshYAxd1lEsN5niH8qLh3S7Mr8BZkr1VC9J8HOTQ0CDro37EpYzPGbXxsKZvUcpeDGuMkeG_yZvOjUJnBzuhZelil77hyunimMfSdonb1ep7PUHBKpEdybEmVAX04rCKPhhgL6RqYT1S1IGFLRQXvBq5LbPBEkhqzfYcPHAjl7nm9D8mwAdm9LI-yC7f6dMZTyUsedkMbyCgwWVGykVGeVndrcP2N8JXYu5drSr1q&csui=3 "https://www.google.com/search?sca_esv=148cca40eee112c3&sxsrf=AE3TifN4-a-7LiZPllth-HWd9LYYfG7m6Q%3A1758851684901&q=Transport+Layer+Security&sa=X&ved=2ahUKEwi_q5CPqfWPAxU44zgGHQBzErcQxccNegQIMxAB&mstk=AUtExfBUzmPgVKLryFs1Y6VYrM1PSr7Kdz0EdjCdlZ0jhgNbGOqUshYAxd1lEsN5niH8qLh3S7Mr8BZkr1VC9J8HOTQ0CDro37EpYzPGbXxsKZvUcpeDGuMkeG_yZvOjUJnBzuhZelil77hyunimMfSdonb1ep7PUHBKpEdybEmVAX04rCKPhhgL6RqYT1S1IGFLRQXvBq5LbPBEkhqzfYcPHAjl7nm9D8mwAdm9LI-yC7f6dMZTyUsedkMbyCgwWVGykVGeVndrcP2N8JXYu5drSr1q&csui=3"), is a cryptographic protocol that provides end-to-end data security and privacy over computer networks like the internet.
 
@@ -27,28 +34,28 @@ TLS is the modern, upgraded successor to the outdated [SSL protocol](https://www
 * **Better Security:** Includes features like Hash-based Message Authentication Codes (HMACs) to ensure data integrity and prevent tampering.
 * **Faster Handshake:** The handshake process to establish a secure connection is more efficient and takes fewer steps.
 
-# Quick RabbitMQ / **MQTT** TLS setup for encryption and authentication Test
+# Quick RabbitMQ/**MQTT** TLS Setup for Encryption and Authentication Test
 
-Shortcut for cert generation
+Shortcut for certificate generation
 
 [**tls-gen/basic at main · rabbitmq/tls-gen**](https://github.com/rabbitmq/tls-gen/tree/main/basic)
 
-## Certification Setup
+## Certificate Setup
 
-1. Create Root CA Key Pair (Private Key and ca_certificate)
+1. Create Root CA key pair (private key and CA certificate)
 
    ```
    openssl genrsa -des3 -out ca.key 2048
    openssl req -new -x509 -days 1826 -key ca.key -out ca.crt
    ```
-2. Setup Server certificate and sign with Root CA Key Pair
+2. Set up server certificate and sign with Root CA key pair
 
    ```
    openssl genrsa -out server.key 2048
    openssl req -new -out server.csr -key server.key
    openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CA createserial -out server.crt -days 360
    ```
-3. Setup Client cert and sign with Root CA Key Pair.
+3. Set up client certificate and sign with Root CA key pair.
 
    ```
    openssl genrsa -out client.key 2048
@@ -56,18 +63,18 @@ Shortcut for cert generation
    openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 360
    ```
 
-Setup RabbitMQ with Server Cert
+Set up RabbitMQ with server certificate
 
-Distribute ca_certificate.pem (public key) and client key pair for client to use.
+Distribute ca_certificate.pem (public key) and the client key pair for clients to use.
 
 ## Cert Distribution Diagram
 
 ![cert_distribution](../assets/img/2025-09-26_TLS_1.png )
 
 
-## Client Cert Generation Key Concept
+## Client Certificate Generation Key Concept
 
-When generate client cert, can customize the cert sign request configurations to have different distributed name, other names, uri etc, used for identify the client.
+When generating a client certificate, you can customize the certificate signing request (CSR) to set the distinguished name, Subject Alternative Names (SANs), URIs, etc., which are used to identify the client.
 
 ## Sample RabbitMQ Server Config
 
@@ -90,17 +97,17 @@ ssl_cert_login_from = common_name
 # mqtt.ssl_cert_login_san_type = other_name
 ```
 
-Here we disabled the client id verification with cert based authentication, reason will be explained.
+Here we disable client ID verification with certificate-based authentication; the reason is explained below.
 
 ## Sample Client
 
-Sub
+Subscribe
 
 ```
 mosquitto_sub -h rabbit.local -p 8883 -t "test" --cafile ca_certificate.pem --cert APM0001.pem --key APM0001.key -i APM0001 -V mqttv5 --property CONNECT user-property client_type APM
 ```
 
-Pub
+Publish
 
 ```
 mosquitto_pub -h rabbit.local -p 8883 -t "test" --cafile ca_certificate.pem --cert APM0001.pem --key APM0001.key -i APM0001_pub -m "hello"
@@ -108,20 +115,20 @@ mosquitto_pub -h rabbit.local -p 8883 -t "test" --cafile ca_certificate.pem --ce
 
 ## Key Note
 
-**Unique Client ID verification**
+**Unique client ID verification**
 
-MQTT only allow one client_id has only one connection, client with same id will kick out the original one.
+MQTT allows only one connection per client_id; a client connecting with the same ID will disconnect the original one.
 
-MQTT cert authentication can support client_id verification, in this the client must use the client id as the same as the configured cert subject name, e.g. in above server config, the comment out part means client_id will be extracted from cert by SAN, otherName, if the client_id doesn’t match
-But this also means, with one cert, only one client_id can be used with that given cert. This won’t be suitable for applications that may need multiple MQTT connections with the same broker.
+MQTT certificate authentication can support client_id verification. In this mode, the client must use a client_id that matches the certificate subject (or SAN if configured). For example, in the server config above, the commented part means the client_id would be extracted from the certificate SAN otherName. If the client_id does not match, authentication fails.
+But this also means with one certificate, only one client_id can be used with that given certificate. This won’t be suitable for applications that may need multiple MQTT connections with the same broker.
 
 So, very likely, we will disable the client_id verification.
 
 **Port for TLS**
 
-When use cert authentication, must also use the encrypted protocol, by default in RabbitMQ plugin, running over 8883 port
+When using certificate authentication, you must also use the encrypted protocol. By default, the RabbitMQ MQTT plugin listens on port 8883.
 
-**Example of How to configure User Property with mqtt5.0**
+**Example: Configure User Properties with MQTT 5.0**
 
 ```
 mosquitto_sub -h rabbit.local -p 8883 -t "test" --cafile ca_certificate.pem --cert APM0001.pem --key APM0001.key -i APM0001 -V mqttv5 --property CONNECT user-property client_type APM --property CONNECT user-property client_name APM0001 
