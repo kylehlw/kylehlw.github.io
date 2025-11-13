@@ -1,6 +1,4 @@
-TLS Support in RabbitMQ and MQTT
-
-# Production Level **IoT** Fundations
+Production Level **IoT** Fundations
 
 Features.
 
@@ -13,7 +11,7 @@ In order to support above features to fully enable production level IoT Services
 
 # TLS Basics
 
-[**TLS Support | RabbitMQ**](https://www.rabbitmq.com/docs/ssl#certificates-and-keys)
+[**TLS Support - RabbitMQ**](https://www.rabbitmq.com/docs/ssl#certificates-and-keys)
 
 Some basic notes.
 
