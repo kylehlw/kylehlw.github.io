@@ -69,7 +69,7 @@ Distribute ca_certificate.pem (public key) and the client key pair for clients t
 
 ## Cert Distribution Diagram
 
-![cert_distribution](../assets/img/2025-09-26_TLS_1.png )
+![cert_distribution](/assets/img/2025-09-26_TLS_1.png )
 
 
 ## Client Certificate Generation Key Concept
