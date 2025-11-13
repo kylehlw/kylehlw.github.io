@@ -69,7 +69,6 @@ $ make ca.der
 
 # Making a Server Certificate
 
-
 The following steps will let you create a server certificate for use with TLS-based EAP methods, such as EAP-TLS, PEAP, and TTLS. Follow similar steps to create an inner-server.pem file, for use with EAP-TLS that is tunneled inside of another TLS-based EAP method.
 
 ```
@@ -95,9 +94,7 @@ $ make server
 If you wish to use an existing certificate authority, you can create a certificate signing request for the server certificate, edit server.cnf as above, and run the following command.
 
 ```
-
 $ make server.csr 
-```
 ```
 
 This step creates a "Certificate Signing Request" suitable for submission to a public CA.
@@ -132,17 +129,11 @@ The certificates created using this method are known to be compatible with ALL o
 
 - iOS and macOS have requirements on certificates. See: [Requirements for trusted certificates in iOS 13 and macOS 10.15 - Apple Support](https://support.apple.com/en-us/HT210176https:)
 - Many systems require certain OIDs in the certificates (`id-kp-serverAuth` for `TLS Web server authentication`). If the certificate does not contain these fields, the system will stop doing EAP. The most visible effect is that the client starts EAP, gets a few Access-Challenge packets, and then a little while later re-starts EAP. If this happens, see the FAQ, and the comments in `freeradius/mods-available/eap` for how to fix it.
-
 - All systems requires the root certificates to be on the client PC. If it doesn't have them, you will see the same issue as above.
-
 - Windows XP post SP2 has a bug where it has problems with certificate chains. i.e. if the server certificate is an intermediate one, and not a root one, then authentication will silently fail, as above.
-
 - Some versions of Windows CE cannot handle 4K RSA certificates. They will (again) silently fail, as above.
-
 - In none of these cases will Windows give the end user any reasonable error message describing what went wrong. This leads people to blame the RADIUS server. That blame is misplaced.
-
-- Certificate chains of more than 64K bytes are known to not work. This is partly a problem in FreeRADIUS. However, most clients cannot handle 64K certificate chains. Most Access Points will shut down the EAP session after about 50 round trips, while 64K certificate chains will take about 60 round trips. So don't use large certificate chains. They will only work after everyone upgrades everything in the network.
-
+- Certificate chains of more than 64K bytes are known to not work. This is partly a problem in FreeRADIUS. However, most clients cannot handle 64K certificate chains. **Most Access Points will shut down the EAP session after about 50 round trips**, while 64K certificate chains will take about 60 round trips. So don't use large certificate chains. They will only work after everyone upgrades everything in the network.
 - All other operating systems are known to work with EAP and FreeRADIUS. This includes Linux, the BSDs, macOS, iOS, Android, Solaris, Symbian, along with all known embedded systems, phones, WiFi devices, etc.
 
 # Performance (TBD)
