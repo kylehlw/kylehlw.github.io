@@ -35,7 +35,9 @@ The default certificate configuration files uses SHA256 for message digests for 
 
 We suggest that new installations use the test certificates for initial tests, and then create real certificates to use for normal user authentication. See the instructions below for how to create the various certificates. The old test certificates can be deleted by running the following command:
 
-```$ make destroycerts ```
+```
+$ make destroycerts
+```
 
 Then, follow the instructions below for creating real certificates.
 
