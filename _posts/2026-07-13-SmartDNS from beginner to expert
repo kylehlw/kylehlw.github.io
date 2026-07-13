@@ -1,0 +1,378 @@
+---
+layout: post
+title: "SmartDNS from beginner to expert"
+date: 2026-07-13 10:00:00 +0800
+categories: dns network smartdns
+tags: [dns, smartdns, networking, privacy, performance]
+description: "A comprehensive guide to understanding and mastering SmartDNS, from basic concepts to advanced deployment scenarios."
+---
+
+# What is SmartDNS?
+
+SmartDNS is a local DNS cache/forwarding application that provides intelligent DNS resolution with support for multiple upstream DNS servers, IP filtering, domain-based routing, and enhanced privacy. It acts as a DNS proxy between your devices and upstream DNS services.
+
+## Key Features
+
+- **Local DNS Cache**: Fast responses for frequently resolved domains
+- **Multiple Upstream DNS**: Support for multiple DNS providers with failover
+- **Domain Routing**: Direct specific domains to specific DNS servers
+- **IP Filtering**: Block or redirect queries based on IP addresses
+- **Privacy Protection**: Remove tracking and telemetry DNS queries
+- **Cross-platform**: Available on Linux, Windows, macOS, OpenWrt, and more
+
+# Prerequisites
+
+- A machine to run SmartDNS (can be a router, NAS, or dedicated server)
+- Basic understanding of DNS concepts
+- Linux command line knowledge (for Linux installations)
+- Network access and appropriate permissions
+
+# Part 1: DNS Fundamentals
+
+## How DNS Works
+
+1. **Query Initiation**: Your device sends a DNS query (e.g., "What is the IP of example.com?")
+2. **Recursive Resolution**: Your device queries a recursive resolver (usually your ISP's DNS or a public DNS like 8.8.8.8)
+3. **Root Nameserver**: The resolver queries the root nameserver to find the authoritative nameserver
+4. **TLD Nameserver**: The resolver queries the TLD nameserver (e.g., .com)
+5. **Authoritative Nameserver**: The resolver queries the authoritative nameserver for the domain
+6. **Response**: The IP address is returned back through the chain
+
+## Why SmartDNS?
+
+| Problem | Solution |
+| --- | --- |
+| ISP DNS blocks/redirects domains | Use multiple DNS providers |
+| Slow DNS resolution | Local caching |
+| Privacy concerns | Filter tracking domains |
+| Regional content blocking | Route to geographically diverse DNS |
+| Single point of failure | Failover to backup DNS servers |
+
+# Part 2: Installation & Setup
+
+## Linux Installation
+
+### Ubuntu/Debian
+
+```bash
+# Add repository
+wget -q -O - https://ppa.smartdns.com/ubuntu-key.gpg | sudo apt-key add -
+echo "deb https://ppa.smartdns.com/ubuntu jammy main" | sudo tee /etc/apt/sources.list.d/smartdns.list
+
+# Install
+sudo apt update
+sudo apt install smartdns
+
+# Enable service
+sudo systemctl enable smartdns
+sudo systemctl start smartdns
+
+# Verify
+sudo systemctl status smartdns
+```
+
+### CentOS/RHEL
+
+```bash
+sudo yum install -y smartdns
+sudo systemctl enable smartdns
+sudo systemctl start smartdns
+```
+
+## OpenWrt Installation
+
+```bash
+# Via LuCI web interface:
+# 1. System → Software
+# 2. Search for "smartdns"
+# 3. Install
+
+# Or via SSH:
+opkg update
+opkg install smartdns
+/etc/init.d/smartdns enable
+/etc/init.d/smartdns start
+```
+
+## Docker Installation
+
+```bash
+docker run -d \
+  --name smartdns \
+  --restart unless-stopped \
+  -p 53:53/udp \
+  -v /etc/smartdns/smartdns.conf:/etc/smartdns/smartdns.conf \
+  officialsmartdns/smartdns:latest
+```
+
+# Part 3: Configuration
+
+## Basic Configuration File Structure
+
+Location: `/etc/smartdns/smartdns.conf`
+
+```bash
+# SmartDNS Configuration Example
+
+# Listen port
+port 53
+
+# Bind address (0.0.0.0 for all interfaces, 127.0.0.1 for localhost only)
+bind 0.0.0.0
+
+# Upstream DNS servers
+upstream 1.1.1.1:53           # Cloudflare
+upstream 8.8.8.8:53           # Google
+upstream 223.5.5.5:53         # AliDNS (China)
+
+# Cache size (in MB)
+cache-size 512
+
+# TCP support
+server-tcp on
+
+# Disable DNSSEC validation (optional, for compatibility)
+# no-dns-sec on
+
+# Domain-specific routing
+# nameserver /example.com/1.1.1.1:53
+
+# IP filtering
+# ipset /example.com/china
+# ipset-name china 10.0.0.0/8
+```
+
+## Advanced Configuration
+
+```bash
+# Multiple upstream with speed-check
+upstream 1.1.1.1:53 -speed-check-mode tcp:80,tcp:443 -group overseas
+upstream 8.8.8.8:53 -speed-check-mode tcp:80,tcp:443 -group overseas
+upstream 223.5.5.5:53 -group domestic
+
+# Domain group routing
+# For domestic domains, use domestic DNS
+nameserver /example.cn/domestic
+
+# For foreign domains, use overseas DNS
+nameserver /google.com/overseas
+
+# Blacklist specific domains
+address /ad.example.com/127.0.0.1
+
+# Whitelist specific domains
+# whilelist-ip 192.168.1.100
+
+# Proxy settings (if behind corporate firewall)
+# proxy socks5://proxy.example.com:1080
+
+# Enable TCP
+server-tcp on
+
+# DNS compression
+dns-compression on
+
+# Cache persistence
+cache-persist on
+```
+
+# Part 4: Advanced Deployment
+
+## Integration with DHCP
+
+```bash
+# Configure your router's DHCP to point clients to SmartDNS
+# In OpenWrt: Network → DHCP and DNS → DNS forwardings
+# Set to your SmartDNS server IP (usually 192.168.1.1 or router IP)
+```
+
+## Domain Routing Strategy
+
+```bash
+# Route China domains to AliDNS
+nameserver /baidu.com/223.5.5.5:53
+nameserver /qq.com/223.5.5.5:53
+nameserver /weibo.com/223.5.5.5:53
+
+# Route overseas domains to Cloudflare
+nameserver /google.com/1.1.1.1:53
+nameserver /github.com/1.1.1.1:53
+nameserver /youtube.com/1.1.1.1:53
+```
+
+## IPv6 Support
+
+```bash
+# Enable IPv6
+ipv6 on
+
+# IPv6 bind address
+bind-ipv6 ::
+
+# IPv6 upstream servers
+upstream 2606:4700:4700::1111:53         # Cloudflare IPv6
+upstream 2001:4860:4860::8888:53         # Google IPv6
+```
+
+# Part 5: Monitoring & Troubleshooting
+
+## Check Service Status
+
+```bash
+# Check if SmartDNS is running
+sudo systemctl status smartdns
+
+# View logs
+sudo journalctl -u smartdns -f
+
+# Check port 53 is listening
+sudo netstat -ulnp | grep 53
+sudo ss -ulnp | grep 53
+
+# Test DNS resolution
+dig @127.0.0.1 example.com
+nslookup example.com 127.0.0.1
+```
+
+## Performance Tuning
+
+```bash
+# Monitor cache hit rate
+# Check SmartDNS logs for cache statistics
+
+# Increase cache size for better performance
+cache-size 1024  # Increase from default 512MB
+
+# Enable speed check for better upstream selection
+upstream 1.1.1.1:53 -speed-check-mode tcp:443
+
+# Adjust timeout values
+# upstream-timeout 6 (default is 6 seconds)
+```
+
+## Common Issues
+
+| Issue | Solution |
+| --- | --- |
+| DNS not resolving | Check upstream servers are reachable: `ping 1.1.1.1` |
+| Slow queries | Increase cache size, check upstream response times |
+| Port 53 in use | Check `sudo lsof -i :53`, kill conflicting process |
+| DNSSEC errors | Add `no-dns-sec on` to config if compatibility issues |
+| Domain not resolving | Check nameserver/routing rules, verify domain in logs |
+
+# Part 6: Best Practices
+
+## Security Recommendations
+
+1. **Restrict Access**: Only expose to trusted networks
+   ```bash
+   bind 192.168.1.0/24  # Only local network
+   ```
+
+2. **Use DoT/DoH Upstream**: Add DNSSEC support
+   ```bash
+   upstream tls://1.1.1.1:853  # DNS over TLS
+   ```
+
+3. **Log Queries**: Monitor suspicious activity
+   ```bash
+   log-file /var/log/smartdns/access.log
+   log-level 4
+   ```
+
+## Performance Best Practices
+
+1. **Start with conservative settings**, then tune:
+   - Small cache size initially, increase based on needs
+   - Default timeouts, adjust if needed
+
+2. **Monitor regularly**:
+   ```bash
+   # Check hit rate monthly
+   grep "cache hit" /var/log/smartdns/access.log
+   ```
+
+3. **Update regularly**: Keep SmartDNS updated for security patches
+
+## Backup Configuration
+
+```bash
+# Backup current config
+sudo cp /etc/smartdns/smartdns.conf /etc/smartdns/smartdns.conf.backup.$(date +%Y%m%d)
+
+# Export running config
+sudo smartdns -c /etc/smartdns/smartdns.conf > smartdns-config.txt
+```
+
+# Part 7: Integration Examples
+
+## With Pi-hole
+
+```bash
+# Use SmartDNS as upstream for Pi-hole
+# In Pi-hole: Settings → DNS → Upstream DNS servers
+# Add: 127.0.0.1#5053 (if SmartDNS runs on port 5053)
+```
+
+## With Home Assistant
+
+```yaml
+# Add SmartDNS to Home Assistant
+homeassistant:
+  name: My Home
+
+http:
+  server_port: 8123
+
+dns:
+  servers:
+    - 192.168.1.X  # Your SmartDNS server IP
+```
+
+## With Kubernetes
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: smartdns-config
+  namespace: default
+data:
+  smartdns.conf: |
+    port 53
+    bind 0.0.0.0
+    upstream 1.1.1.1:53
+    cache-size 256
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: smartdns
+spec:
+  selector:
+    app: smartdns
+  ports:
+    - protocol: UDP
+      port: 53
+      targetPort: 53
+  type: LoadBalancer
+```
+
+# Summary
+
+SmartDNS is a powerful tool for:
+
+- **Home Users**: Private DNS, ad-blocking, content filtering
+- **Network Admins**: Central DNS cache, domain routing, performance optimization
+- **ISP Bypass**: Circumvent ISP DNS blocking through intelligent routing
+- **Enterprise**: Internal DNS with failover and monitoring
+
+By mastering SmartDNS configuration, you can:
+- ✅ Improve DNS resolution speed
+- ✅ Enhance privacy and security
+- ✅ Control content access
+- ✅ Implement intelligent domain routing
+- ✅ Build resilient DNS infrastructure
+
+Start with basic setup, gradually add advanced features based on your needs!
+
