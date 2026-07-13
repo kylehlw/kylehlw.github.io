@@ -107,12 +107,12 @@ docker run -d \
 
 # Part 3: Configuration
 ## 文件结构
-![files](../assets/img/2026-07-13%2013-42-40.png)
+![files](../assets/img/2026-07-13-13-42-40.png)
 
 第二段为 /etc/smartdns 文件夹中的文件，其中的配置文件会加载 /tmp/etc/smartdns 中的配置项
 
 ```cat /tmp/etc/smartdns/smartdns.conf.tmp```
-![resolv-file](../assets/img/2026-07-13%2013-55-22.png)
+![resolv-file](../assets/img/2026-07-13-13-55-22.png)
 
 
 ## Basic Configuration File Structure
@@ -156,7 +156,7 @@ server-tcp on
 # ipset-name china 10.0.0.0/8
 ```
 NOTE: Smartdns 有测速机制，请为其添加至少1个上游DNS（建议10以内）。
-![publicdns](../assets/img/2026-07-13%2014-33-33.png)
+![publicdns](../assets/img/2026-07-13-14-33-33.png)
 
 ## Advanced Configuration
 
