@@ -9,7 +9,7 @@ description: "A comprehensive guide to understanding and mastering SmartDNS, fro
 
 # What is SmartDNS?
 
-SmartDNS is a local DNS cache/forwarding application that provides intelligent DNS resolution with support for multiple upstream DNS servers, IP filtering, domain-based routing, and enhanced privacy. It acts as a DNS proxy between your devices and upstream DNS services.
+[SmartDNS](https://pymumu.github.io/smartdns/) is a local DNS cache/forwarding application that provides intelligent DNS resolution with support for multiple upstream DNS servers, IP filtering, domain-based routing, and enhanced privacy. It acts as a DNS proxy between your devices and upstream DNS services.
 
 ## Key Features
 
@@ -106,8 +106,22 @@ docker run -d \
 ```
 
 # Part 3: Configuration
+## 文件结构
+![files](../assets/img/2026-07-13%2013-42-40.png)
+
+第二段为 /etc/smartdns 文件夹中的文件，其中的配置文件会加载 /tmp/etc/smartdns 中的配置项
+
+```cat /tmp/etc/smartdns/smartdns.conf.tmp```
+![resolv-file](../assets/img/2026-07-13%2013-55-22.png)
+
 
 ## Basic Configuration File Structure
+
+[Doc URL](https://pymumu.github.io/smartdns/configuration/)
+
+[Basic-config URL](https://pymumu.github.io/smartdns/config/basic-config/)
+
+[Free public DNS servers](https://dns.icoa.cn/)
 
 Location: `/etc/smartdns/smartdns.conf`
 
@@ -141,6 +155,8 @@ server-tcp on
 # ipset /example.com/china
 # ipset-name china 10.0.0.0/8
 ```
+NOTE: Smartdns 有测速机制，请为其添加至少1个上游DNS（建议10以内）。
+![publicdns](../assets/img/2026-07-13%2014-33-33.png)
 
 ## Advanced Configuration
 
